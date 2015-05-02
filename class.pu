@@ -1,0 +1,33 @@
+@startuml
+scale 1000 width
+Player --* Game
+Emoji --* Game
+Window --|> Game
+Market --|> Window
+StartMenu --|> Window
+
+Player : MoveUp()
+Player : DropDown()
+Player : curPosition()
+Player : addScore()
+Player : returnScore()
+
+StartMenu : LoadProfile()
+StartMenu : returnProfile()
+StartMenu : StartGame()
+StartMenu : Quit()
+
+Emoji : MoveRandom()
+Emoji : Dispose()
+
+Window : setBackground()
+
+Market : Market()
+Market : buyEmoji(Emoji)
+Market : setProfile(Player)
+Market : getProfile(Player)
+
+Game : Game()
+Game : Pause()
+Game : Collision()
+@enduml

@@ -1,0 +1,27 @@
+@startuml
+scale 1000 width
+[*] --> StartMenu
+StartMenu --> Playing
+StartMenu --> LoadProfile
+StartMenu --> Quit
+LoadProfile --> StartMenu
+
+state Playing {
+  [*] --> GoUp : Click
+  [*] --> Dropping : Not Clicking
+  GoUp --> Dropping : Not Clicking
+  [*] --> Pause : Click Pause
+}
+
+state Pause {
+ [*] --> Market : Open Market
+ Market --> [*]
+}
+
+Pause --> Playing : Click Resume
+
+Quit --> [*] : Click Quit
+Playing --> [*] : Game over
+
+
+@enduml

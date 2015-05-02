@@ -1,0 +1,10 @@
+@startuml
+scale 1000 width
+:Player: -> (start game)
+:Player: --> (load profile)
+:Player: ---> (quit)
+:Player: ----> (pause)
+:Player: -----> (open market)
+:Player: ------> (buy emoji)
+:Player: -------> (play game)
+@enduml

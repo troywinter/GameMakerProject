@@ -1,0 +1,28 @@
+@startuml
+scale 1000 width
+Play1 -> Game: StartGame()
+Game -> Player: DropDown()
+Player -> Game: curPosition()
+Play1 -> Game: ClickScreen()
+Game -> Player: MoveUp()
+Player -> Game: curPosition()
+Emoji -> Game: Colision()
+Game -> Emoji: Dispose()
+Game -> Player: addScore()
+Player -> Game: returnScore()
+
+Game -> Game: Pause()
+Game -> Market: Market()
+Play1 -> Market: buyEmoji(Emoji)
+Game -> Market: getProfile()
+Game -> Market: setProfile()
+Play1 -> Game: resume()
+Game -> Player: Gameover()
+Player -> Game: Quit()
+Game -> Play1: Close()
+
+alt
+Play1 -> StartMenu: LoadProfile()
+StartMenu -> Play1: returnProfile()
+end
+@enduml
